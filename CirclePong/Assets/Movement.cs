@@ -8,8 +8,16 @@ public class Movement : MonoBehaviour
     Vector3 VelVec;
     Vector3 nVelVec;
     Vector3 zeroV = new Vector3(0, 0, 0);
-    // public Vector3 angularVelocity = ; 
-    private Rigidbody RB;
+    public Rigidbody RB;
+    public Transform ts;
+    public Transform tst;
+    public float center;
+    public float rightBound;
+    public float leftBound;
+    public float verticalPos;
+    ///public Vector3 activeBound;
+    public Quaternion leftactiveBound;
+    public Quaternion rightactiveBound;
 
     void Start()
     {
@@ -18,22 +26,39 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        // Velocity = angularVelocity;
-        if (Input.GetKey("d"))
+        Debug.Log(ts.position.z);
+        if (ts.position.x < center)
         {
-            GetComponent<Rigidbody>().angularVelocity = VelVec;
+           // Debug.Log("centertrigger");
+
+
+            if (ts.position.z < rightBound)
+            {
+                Debug.Log("righttrigger");
+                RB.angularVelocity = Vector3.zero;
+                tst.rotation = rightactiveBound;
+            }
+            else if (ts.position.z > leftBound)
+            {
+                Debug.Log("lefttrigger");
+                RB.angularVelocity = Vector3.zero;
+                tst.rotation = leftactiveBound;
+            }
         }
-        else if (Input.GetKey("a"))
+        else
         {
-            GetComponent<Rigidbody>().angularVelocity = nVelVec;
+            if (Input.GetKey("a"))
+            {
+                GetComponent<Rigidbody>().angularVelocity = VelVec;
+            }
+            else if (Input.GetKey("d"))
+            {
+                GetComponent<Rigidbody>().angularVelocity = nVelVec;
+            }
+            else
+            {
+                GetComponent<Rigidbody>().angularVelocity = zeroV;
+            }
         }
-        else 
-        {
-            GetComponent<Rigidbody>().angularVelocity = zeroV;
-        }
-
-
-
-
     }
 }
