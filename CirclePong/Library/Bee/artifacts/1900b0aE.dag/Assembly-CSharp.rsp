@@ -345,9 +345,10 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Movement.cs"
-"Assets/Movement2.cs"
-"Assets/test.cs"
+"Assets/Scripts/Bumper.cs"
+"Assets/Scripts/Collision.cs"
+"Assets/Scripts/Movement.cs"
+"Assets/Scripts/Movement2.cs"
 -langversion:9.0
 
 /deterministic
