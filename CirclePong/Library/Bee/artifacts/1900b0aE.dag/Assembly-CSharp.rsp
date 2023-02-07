@@ -347,6 +347,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Movement.cs"
 "Assets/movement2.cs"
+"Assets/test.cs"
 -langversion:9.0
 
 /deterministic

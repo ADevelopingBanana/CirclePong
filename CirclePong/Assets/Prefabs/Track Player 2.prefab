@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 845650013405036979, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263974, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: m_Name
       value: Track Player 2
@@ -54,6 +58,10 @@ PrefabInstance:
     - target: {fileID: 3401334417521263978, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334418633402401, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
