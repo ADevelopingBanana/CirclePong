@@ -26,7 +26,7 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(ts.position.z);
+       // Debug.Log(ts.position.z);
         if (ts.position.x < center)
         {
            // Debug.Log("centertrigger");
@@ -34,13 +34,13 @@ public class Movement : MonoBehaviour
 
             if (ts.position.z < rightBound)
             {
-                Debug.Log("righttrigger");
+               // Debug.Log("righttrigger");
                 RB.angularVelocity = Vector3.zero;
                 tst.rotation = rightactiveBound;
             }
             else if (ts.position.z > leftBound)
             {
-                Debug.Log("lefttrigger");
+               // Debug.Log("lefttrigger");
                 RB.angularVelocity = Vector3.zero;
                 tst.rotation = leftactiveBound;
             }

@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &536198789 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8101651580845672242, guid: 7c81952da95616a40aae951a23cd292e, type: 3}
+  m_PrefabInstance: {fileID: 689018103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &678498983
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +218,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4328581529443943061, guid: 7c81952da95616a40aae951a23cd292e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7c81952da95616a40aae951a23cd292e, type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -309,6 +315,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &816008179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8101651581815466613, guid: 7c81952da95616a40aae951a23cd292e, type: 3}
+  m_PrefabInstance: {fileID: 689018103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &816008181 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5135196075337439260, guid: 7c81952da95616a40aae951a23cd292e, type: 3}
+  m_PrefabInstance: {fileID: 689018103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &816008185 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8101651581815466617, guid: 7c81952da95616a40aae951a23cd292e, type: 3}
+  m_PrefabInstance: {fileID: 689018103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &816008186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816008179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5687d56829bef34d98f10099db1a04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Velocity: 2
+  RB: {fileID: 816008181}
+  ts: {fileID: 536198789}
+  tst: {fileID: 816008185}
+  center: 0
+  rightBound: 0
+  leftBound: 0
+  verticalPos: 0
+  leftactiveBound: {x: 0, y: 0.7009093, z: 0, w: -0.7132504}
+  rightactiveBound: {x: 0, y: 0.70090926, z: 0, w: 0.71325046}
 --- !u!1 &836940914
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +658,10 @@ PrefabInstance:
     - target: {fileID: 3401334417521263974, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: m_Name
       value: Track1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: Velocity
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: leftactiveBound.w
