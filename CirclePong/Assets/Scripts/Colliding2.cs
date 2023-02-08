@@ -21,7 +21,7 @@ public class Colliding2 : MonoBehaviour
         {
                 Debug.Log("Trigger Paddle2 velocity = " + RB.velocity + "(Magnitude: " + RB.velocity.magnitude + ")" );
             
-            normalVector = targetTransform2.position - fromTransform2.position;
+            normalVector = Vector3.Normalize(targetTransform2.position - fromTransform2.position);
             
                 Debug.Log("normalVector = " + normalVector + "(Magnitude: " + normalVector.magnitude + ")" );
             
