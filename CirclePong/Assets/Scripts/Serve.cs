@@ -6,6 +6,7 @@ public class Serve : MonoBehaviour
 {
     private Vector3 bounceVelocity;
     public Rigidbody RB;
+    public float serveSpeed;
  
 
 
@@ -13,7 +14,7 @@ public class Serve : MonoBehaviour
     void Start()
     {
         
-        RB.velocity = new Vector3(-20f, 0, 0);
+        RB.velocity = new Vector3(serveSpeed, 0, 0);
     }
 
     // Update is called once per frame

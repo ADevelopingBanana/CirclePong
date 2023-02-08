@@ -14,15 +14,20 @@ public class Colliding2 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-         if (other.gameObject.tag == "Paddle2")
+        
+                Debug.Log("Trigger Collider2 Impact velocity = " + RB.velocity + "(Magnitude: " + RB.velocity.magnitude + ")" );
+        
+        if (other.gameObject.tag == "Paddle2")
         {
-            Debug.Log("Trigger Paddle2");
-            Debug.Log(RB.velocity + "start2");
+                Debug.Log("Trigger Paddle2 velocity = " + RB.velocity + "(Magnitude: " + RB.velocity.magnitude + ")" );
+            
             normalVector = targetTransform2.position - fromTransform2.position;
-
+            
+                Debug.Log("normalVector = " + normalVector + "(Magnitude: " + normalVector.magnitude + ")" );
+            
             RB.velocity = Vector3.Reflect(RB.velocity, normalVector);
-            Debug.Log(RB.velocity + normalVector);
-
+            
+                Debug.Log("Final Velocity1 = " + RB.velocity + "(Magnitude: " + RB.velocity.magnitude + ")" );
 
         }
     }
