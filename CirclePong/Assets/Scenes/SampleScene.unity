@@ -506,10 +506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RB: {fileID: 836940920}
   bouncePower: 1.2
-  fromTransform: {fileID: 1182420096}
-  targetTransform: {fileID: 1499473416}
-  fromTransform2: {fileID: 816008185}
-  targetTransform2: {fileID: 536198789}
+  playerTransform: {fileID: 1182420096}
+  trackTransform: {fileID: 1499473416}
 --- !u!114 &836940924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,10 +522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RB: {fileID: 836940920}
   bouncePower: 0
-  fromTransform: {fileID: 1182420096}
-  targetTransform: {fileID: 1499473416}
-  fromTransform2: {fileID: 816008185}
-  targetTransform2: {fileID: 536198789}
+  playerTransform: {fileID: 536198789}
+  trackTransform: {fileID: 816008185}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

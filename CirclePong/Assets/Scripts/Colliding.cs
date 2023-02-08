@@ -6,11 +6,9 @@ public class Colliding : MonoBehaviour
 {
     public Rigidbody RB;
     public float bouncePower;
-    public Transform fromTransform;
-    public Transform targetTransform;
+    public Transform playerTransform;
+    public Transform trackTransform;
     private Vector3 normalVector;
-    public Transform fromTransform2;
-    public Transform targetTransform2;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,10 +17,9 @@ public class Colliding : MonoBehaviour
 
         if (other.gameObject.tag == "Paddle")
         {
-            
                 Debug.Log("Trigger Paddle2 velocity = " + RB.velocity + "(Magnitude: " + RB.velocity.magnitude + ")" );
 
-            normalVector = Vector3.Normalize(targetTransform.position - fromTransform.position);
+            normalVector = Vector3.Normalize(trackTransform.position - playerTransform.position);
 
                 Debug.Log("normalVector = " + normalVector + "(Magnitude: " + normalVector.magnitude + ")" );
 
