@@ -26,10 +26,10 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-       // Debug.Log(ts.position.z);
+       //Debug.Log(ts.position.z);
         if (ts.position.x < center)
         {
-           // Debug.Log("centertrigger");
+           //Debug.Log("centertrigger");
 
 
             if (ts.position.z < rightBound)

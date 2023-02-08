@@ -21,12 +21,14 @@ public class Bumper : MonoBehaviour
         bumpVec = new Vector3(4.5f, 0, 0);
         if (Input.GetKey("w"))
         {
-            ts.localPosition = bumpVec;
+            while (ts.localPosition.x > 4.5f)
+            {
+                ts.localPosition = ts.localPosition - new Vector3(.1f, 0, 0);
+            }
         }
         else
         {
             ts.localPosition = new Vector3(5f, 0, 0);
                 }
-
     }
 }

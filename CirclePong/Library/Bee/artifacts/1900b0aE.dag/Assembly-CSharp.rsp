@@ -346,9 +346,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Bumper.cs"
-"Assets/Scripts/Collision.cs"
+"Assets/Scripts/Bumper2.cs"
+"Assets/Scripts/Colliding.cs"
+"Assets/Scripts/Colliding2.cs"
 "Assets/Scripts/Movement.cs"
 "Assets/Scripts/Movement2.cs"
+"Assets/Scripts/Serve.cs"
 -langversion:9.0
 
 /deterministic

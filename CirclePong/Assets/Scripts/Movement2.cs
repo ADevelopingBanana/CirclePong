@@ -26,7 +26,7 @@ public class Movement2 : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(ts.position.z);
+        //Debug.Log(ts.position.z);
         if (ts.position.x > center)
         {
             //Debug.Log("centertrigger");
