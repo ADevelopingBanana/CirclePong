@@ -351,16 +351,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5687d56829bef34d98f10099db1a04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Velocity: 2
+  Speed: 2
+  center: 0
+  lowerBound: 0
+  upperBound: 0
+  upperBoundAngle: {x: 0, y: 0.70090926, z: 0, w: 0.71325046}
+  lowerBoundAngle: {x: 0, y: 0.7009093, z: 0, w: -0.7132504}
+  upButton: 119
+  downButton: 115
   RB: {fileID: 816008181}
   ts: {fileID: 536198789}
   tst: {fileID: 816008185}
-  center: 0
-  rightBound: 0
-  leftBound: 0
-  verticalPos: 0
-  leftactiveBound: {x: 0, y: 0.7009093, z: 0, w: -0.7132504}
-  rightactiveBound: {x: 0, y: 0.70090926, z: 0, w: 0.71325046}
 --- !u!1 &836940914
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,9 +377,8 @@ GameObject:
   - component: {fileID: 836940920}
   - component: {fileID: 836940922}
   - component: {fileID: 836940923}
-  - component: {fileID: 836940924}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -501,29 +501,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 836940914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8e62f29304f9b46b47c31373ecc276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RB: {fileID: 836940920}
-  bouncePower: 1.2
-  playerTransform: {fileID: 1182420096}
-  trackTransform: {fileID: 1499473416}
---- !u!114 &836940924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836940914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e9e6ef643ed30d4c88423646304770a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RB: {fileID: 836940920}
-  bouncePower: 0
-  playerTransform: {fileID: 536198789}
-  trackTransform: {fileID: 816008185}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,16 +588,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 51.251, y: -359.608, z: 1.04}
---- !u!4 &1182420096 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3401334418633402401, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
-  m_PrefabInstance: {fileID: 3401334417740334851}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1499473416 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3401334417521263978, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
-  m_PrefabInstance: {fileID: 3401334417740334851}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2010103942
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +601,7 @@ GameObject:
   - component: {fileID: 2010103944}
   - component: {fileID: 2010103943}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -736,8 +706,20 @@ PrefabInstance:
       value: Track1
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: Speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: Velocity
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: upButton
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: downButton
+      value: 107
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: leftactiveBound.w
@@ -749,6 +731,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: leftactiveBound.y
+      value: 0.7009093
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: lowerBoundAngle.w
+      value: 0.71325046
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: lowerBoundAngle.y
+      value: 0.70090926
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: upperBoundAngle.w
+      value: -0.7132504
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: upperBoundAngle.y
       value: 0.7009093
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}

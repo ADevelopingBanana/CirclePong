@@ -4,60 +4,73 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float Velocity;
-    Vector3 VelVec;
-    Vector3 nVelVec;
-    Vector3 zeroV = new Vector3(0, 0, 0);
+    public float Speed;
+
+    public float center;
+    public float lowerBound;
+    public float upperBound;
+
+    public Quaternion upperBoundAngle;
+    public Quaternion lowerBoundAngle;
+
+    public KeyCode upButton;
+    public KeyCode downButton;
+    
     public Rigidbody RB;
     public Transform ts;
     public Transform tst;
-    public float center;
-    public float rightBound;
-    public float leftBound;
-    public float verticalPos;
-    ///public Vector3 activeBound;
-    public Quaternion leftactiveBound;
-    public Quaternion rightactiveBound;
+
+    private Vector3 velocityVector;
+    private Vector3 nVelocityVector;
+
 
     void Start()
     {
-        VelVec = new Vector3(0, Velocity, 0);
-        nVelVec = new Vector3(0, -Velocity, 0);
+        // Create velocity vectors
+        velocityVector = new Vector3(0, Speed, 0);
+        nVelocityVector = new Vector3(0, -Speed, 0);
     }
     void Update()
     {
-       //Debug.Log(ts.position.z);
+        // If player is over center line
         if (ts.position.x < center)
         {
-           //Debug.Log("centertrigger");
-
-
-            if (ts.position.z < rightBound)
+            // AND player is on bottom side
+            if (ts.position.z < lowerBound)
             {
-               // Debug.Log("righttrigger");
+                // Set angular velocity to zero
                 RB.angularVelocity = Vector3.zero;
-                tst.rotation = rightactiveBound;
+                // Turn track angle to lower bound
+                tst.rotation = lowerBoundAngle;
             }
-            else if (ts.position.z > leftBound)
+            // AND player is on top side
+            else if (ts.position.z > upperBound)
             {
-               // Debug.Log("lefttrigger");
+                // Set angular velocity to zero
                 RB.angularVelocity = Vector3.zero;
-                tst.rotation = leftactiveBound;
+                // Turn track angle to upper bound
+                tst.rotation = upperBoundAngle;
             }
         }
+        // else (Player is on their side)
         else
         {
-            if (Input.GetKey("a"))
+            // If pressing down button
+            if (Input.GetKey(downButton))
             {
-                GetComponent<Rigidbody>().angularVelocity = VelVec;
+                // Set track velocity to velocityVector
+                GetComponent<Rigidbody>().angularVelocity = velocityVector;
             }
-            else if (Input.GetKey("d"))
+            // elseIf pressing up button
+            else if (Input.GetKey(upButton))
             {
-                GetComponent<Rigidbody>().angularVelocity = nVelVec;
+                // Set track velocity to nVelocityVector
+                GetComponent<Rigidbody>().angularVelocity = nVelocityVector;
             }
             else
             {
-                GetComponent<Rigidbody>().angularVelocity = zeroV;
+                // else (no button pressed) Set angular velocity to zero
+                GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             }
         }
     }
