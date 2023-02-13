@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
         // If player is over center line
         if (ts.position.x < horizontalBound)
         {
-            // AND player is on bottom side
+            // If player is on bottom side
             if (ts.position.z < lowerBound)
             {
                 // Set angular velocity to zero
@@ -43,7 +43,7 @@ public class Movement : MonoBehaviour
                 // Turn track angle to lower bound
                 tst.rotation = lowerBoundAngle;
             }
-            // AND player is on top side
+            // Else if player is on top side
             else if (ts.position.z > upperBound)
             {
                 // Set angular velocity to zero

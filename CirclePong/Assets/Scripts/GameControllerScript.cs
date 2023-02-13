@@ -29,11 +29,13 @@ public class GameControllerScript : MonoBehaviour
         // If Player 1
         if (isPlayer1 == true)
         {
+            // Add 2 to p2Score
             p1Score ++;
         }
         // else (Player2)
         else 
         {
+            // Add 1 to p2Score
             p2Score ++;
         }
         Debug.Log("P1: " + GameObject.Find ("GameController").GetComponent <GameControllerScript>().p1Score + "P2: " + GameObject.Find ("GameController").GetComponent <GameControllerScript>().p2Score);

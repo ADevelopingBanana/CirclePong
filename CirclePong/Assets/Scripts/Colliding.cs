@@ -7,18 +7,25 @@ public class Colliding : MonoBehaviour
     Vector3 normalVector;
     void OnTriggerEnter(Collider collidedObject)
     {
-        Debug.Log("goal");
+
+        //If colliding with a goal and..
         if(collidedObject.tag == "Goal")
         {
+            // If on player 2 side
             if (collidedObject.transform.position.x < 0)
             {
+                // Call ScorePoint function with isPlayer1 = true
                 GameObject.Find ("GameController").GetComponent <GameControllerScript>().ScorePoint(true);
             }
+            
+            // Else if on player 1 side
             else if (collidedObject.transform.position.x >= 0)
             {
-               GameObject.Find ("GameController").GetComponent <GameControllerScript>().ScorePoint(false); 
+                // Call ScorePoint function with isPlayer1 = false
+                GameObject.Find ("GameController").GetComponent <GameControllerScript>().ScorePoint(false); 
             }
             
+            // Delete the ball
             Destroy(gameObject);
         }
 
