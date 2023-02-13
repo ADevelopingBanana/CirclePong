@@ -6,7 +6,7 @@ public class Movement2 : MonoBehaviour
 {
     public float Speed;
 
-    public float center;
+    public float horizontalBound;
     public float lowerBound;
     public float upperBound;
 
@@ -33,7 +33,7 @@ public class Movement2 : MonoBehaviour
     void Update()
     {
         // If player is over center line
-        if (ts.position.x > center)
+        if (ts.position.x > horizontalBound)
         {
             // AND player is on bottom side
             if (ts.position.z < lowerBound)

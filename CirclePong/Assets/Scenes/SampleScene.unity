@@ -402,11 +402,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  center: 0
+  horizontalBound: -10.6066
   lowerBound: 0
   upperBound: 0
-  upperBoundAngle: {x: 0, y: 0.70090926, z: 0, w: 0.71325046}
-  lowerBoundAngle: {x: 0, y: 0.7009093, z: 0, w: -0.7132504}
+  upperBoundAngle: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
+  lowerBoundAngle: {x: 0, y: -0.38268346, z: 0, w: 0.9238795}
   upButton: 105
   downButton: 107
   RB: {fileID: 816008181}
@@ -1129,6 +1129,10 @@ PrefabInstance:
       value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
+      propertyPath: horizontalBound
+      value: 10.6066
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: leftactiveBound.w
       value: -0.7132504
       objectReference: {fileID: 0}
@@ -1142,19 +1146,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: lowerBoundAngle.w
-      value: 0.71325046
+      value: 0.9238795
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: lowerBoundAngle.y
-      value: 0.70090926
+      value: 0.38268346
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: upperBoundAngle.w
-      value: -0.7132504
+      value: 0.9238795
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: upperBoundAngle.y
-      value: 0.7009093
+      value: -0.38268346
       objectReference: {fileID: 0}
     - target: {fileID: 3401334417521263976, guid: d6412dd53f2883f45a3138df6332330d, type: 3}
       propertyPath: rightactiveBound.w
