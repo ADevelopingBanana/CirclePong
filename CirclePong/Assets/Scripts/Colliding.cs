@@ -5,43 +5,32 @@ using UnityEngine;
 public class Colliding : MonoBehaviour
 {
     Vector3 normalVector;
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collidedObject)
     {
-        // If colliding with Player1
-        if (other.gameObject.tag == "Paddle")
+        Debug.Log("goal");
+        if(collidedObject.tag == "Goal")
         {
-            // Get components
-            Transform playerTransform = GameObject.Find ("Player1").GetComponent <Transform>();
-            Transform trackTransform = GameObject.Find ("Track1").GetComponent <Transform>();
-            Rigidbody RB = gameObject.GetComponent <Rigidbody>();
-
-            // Calculate normalVector 
-            normalVector = Vector3.Normalize(trackTransform.position - playerTransform.position);
-
-            // Calculate and return reflected Velocity as Vector3
-            RB.velocity = Vector3.Reflect(RB.velocity, normalVector);
+            if (collidedObject.transform.position.x < 0)
+            {
+                GameObject.Find ("GameController").GetComponent <GameControllerScript>().ScorePoint(true);
+            }
+            else if (collidedObject.transform.position.x >= 0)
+            {
+               GameObject.Find ("GameController").GetComponent <GameControllerScript>().ScorePoint(false); 
+            }
             
-
-
+            Destroy(gameObject);
         }
-        // If colliding with Player2   
-        else if (other.gameObject.tag == "Paddle2")
-        {
-            // Get components 
-            Transform playerTransform = GameObject.Find ("Player2").GetComponent <Transform>();
-            Transform trackTransform = GameObject.Find ("Track2").GetComponent <Transform>();
-            Rigidbody RB = gameObject.GetComponent <Rigidbody>();
 
+        // Get Rigidbody Component
+        Rigidbody RB = gameObject.GetComponent <Rigidbody>();
 
-            // Calculate normalVector
-            normalVector = Vector3.Normalize(playerTransform.position - trackTransform.position);
+        // Calculate normalVector 
+        normalVector = GameObject.Find ("GameController").GetComponent <GameControllerScript>().speedUpRate * Vector3.Normalize(GameObject.Find ("Track1").transform.position - collidedObject.transform.position);
 
-            // Calculate and return reflected Velocity as Vector3
-            RB.velocity = Vector3.Reflect(RB.velocity, normalVector);
+        // Calculate and return reflected Velocity as Vector3
+        RB.velocity = Vector3.Reflect(RB.velocity, normalVector);
             
-
-
-        }
     }
 
 }

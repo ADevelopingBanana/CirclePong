@@ -55,14 +55,14 @@ public class Movement : MonoBehaviour
         // else (Player is on their side)
         else
         {
-            // If pressing down button
-            if (Input.GetKey(downButton))
+            // If pressing up button
+            if (Input.GetKey(upButton))
             {
                 // Set track velocity to velocityVector
                 GetComponent<Rigidbody>().angularVelocity = velocityVector;
             }
-            // elseIf pressing up button
-            else if (Input.GetKey(upButton))
+            // elseIf pressing down button
+            else if (Input.GetKey(downButton))
             {
                 // Set track velocity to nVelocityVector
                 GetComponent<Rigidbody>().angularVelocity = nVelocityVector;

@@ -12,6 +12,7 @@ public class GameControllerScript : MonoBehaviour
     public int timer;
     public int timeLimit;
     public int scoreLimit;
+    public float speedUpRate = 1.01f;
 
 
     void Start()
@@ -23,7 +24,7 @@ public class GameControllerScript : MonoBehaviour
     }
 
     // ScorePoint function. Can be called with -- GameObject.Find ("GameController").GetComponent <GameControllerScript>().ScorePoint(isPlayer1); -- Replace "isPlayer1" with true or false.
-    void ScorePoint(bool isPlayer1)
+    public void ScorePoint(bool isPlayer1)
     {
         // If Player 1
         if (isPlayer1 == true)
@@ -35,6 +36,7 @@ public class GameControllerScript : MonoBehaviour
         {
             p2Score ++;
         }
+        Debug.Log("P1: " + GameObject.Find ("GameController").GetComponent <GameControllerScript>().p1Score + "P2: " + GameObject.Find ("GameController").GetComponent <GameControllerScript>().p2Score);
 
         // End game if score limit is reached
 
