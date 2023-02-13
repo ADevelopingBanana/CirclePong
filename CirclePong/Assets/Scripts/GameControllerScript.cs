@@ -9,7 +9,7 @@ public class GameControllerScript : MonoBehaviour
     // Public variables. Can be referenced with GameObject.Find ("GameController").GetComponent <GameControllerScript>().variableName;
     public int p1Score;
     public int p2Score;
-    public int timer;
+    public int timer=69;
     public int timeLimit;
     public int scoreLimit;
     public float speedUpRate = 1.01f;
