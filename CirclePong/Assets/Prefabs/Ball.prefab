@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7790444479218728925}
   - component: {fileID: 7790444479218728924}
   - component: {fileID: 7790444479218728912}
-  - component: {fileID: 101811024352488197}
   - component: {fileID: 7790444479218728914}
+  - component: {fileID: 1949885652591923576}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -116,18 +116,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 1
---- !u!114 &101811024352488197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7790444479218728922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8e62f29304f9b46b47c31373ecc276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7790444479218728914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +132,15 @@ MonoBehaviour:
   serveSpeed: -20
   isParentedTo: 0
   serveButton: 32
+--- !u!114 &1949885652591923576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7790444479218728922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9e6ef643ed30d4c88423646304770a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
