@@ -172,6 +172,7 @@ MonoBehaviour:
   timer: 69
   timeLimit: 60
   scoreLimit: 10
+  maxSpeed: 35
   speedUpRate: 1.02
   ballServeOffset: {x: -14, y: 0.5, z: 0}
   BallPrefab: {fileID: 7790444479218728922, guid: 87aa24c2dc4124042b395755fd50d855, type: 3}

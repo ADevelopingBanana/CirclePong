@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class Colliding : MonoBehaviour
 {
+
+    
     Vector3 normalVector;
+    float maxSpeed;
+    float speedUpRate;
+
+    void Start()
+    {
+        maxSpeed = GameObject.Find ("GameController").GetComponent <GameControllerScript>().maxSpeed;
+        speedUpRate = GameObject.Find ("GameController").GetComponent <GameControllerScript>().speedUpRate;
+    }
     void OnTriggerEnter(Collider collidedObject)
     {
 
@@ -33,7 +43,18 @@ public class Colliding : MonoBehaviour
         Rigidbody RB = gameObject.GetComponent <Rigidbody>();
 
         // Calculate normalVector 
-        normalVector = GameObject.Find ("GameController").GetComponent <GameControllerScript>().speedUpRate * Vector3.Normalize(GameObject.Find ("Track1").transform.position - collidedObject.transform.position);
+        normalVector = Vector3.Normalize(GameObject.Find ("Track1").transform.position - collidedObject.transform.position);
+
+        Debug.Log("speed = " + RB.velocity.magnitude);
+        Debug.Log("Maxspeed = " + maxSpeed);
+
+        // Accelerate if not over max speed
+        if (RB.velocity.magnitude < maxSpeed)
+        {
+            Debug.Log("acclerated ball");
+            normalVector *= speedUpRate;
+            Debug.Log("new speed = " + RB.velocity.magnitude);
+        }
 
         // Calculate and return reflected Velocity as Vector3
         RB.velocity = Vector3.Reflect(RB.velocity, normalVector);

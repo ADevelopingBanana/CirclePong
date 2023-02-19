@@ -9,22 +9,39 @@ public class Serve : MonoBehaviour
     public float serveSpeed;
     public int isParentedTo;
     public KeyCode serveButton;
+    private bool firstServe = true;
  
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if (isParentedTo == 0)
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3 (serveSpeed, 0, 0);
-        }
+            
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isParentedTo == 1)
+        if (firstServe == true && isParentedTo == 0)
+        {
+            int randomServe = Random.Range(0, 2);
+
+            if (Input.GetKey(serveButton))
+            {
+                if (randomServe == 1)
+                {
+                GetComponent<Rigidbody>().velocity = new Vector3 (serveSpeed, 0, 0);
+                }
+                
+                else
+                {
+                GetComponent<Rigidbody>().velocity = new Vector3 (-serveSpeed, 0, 0);
+                }
+
+                firstServe = false;
+            }
+        }
+        else if (isParentedTo == 1)
         {
             if (Input.GetKey(serveButton))
             {

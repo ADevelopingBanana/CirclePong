@@ -14,6 +14,7 @@ public class GameControllerScript : MonoBehaviour
     public float timer;
     public int timeLimit;
     public int scoreLimit;
+    public float maxSpeed;
     public float speedUpRate = 1.01f;
     public Vector3 ballServeOffset;
     public GameObject BallPrefab;
